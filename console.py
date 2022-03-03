@@ -30,18 +30,18 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             models = eval(class_name)().save()
-            print(model.id)
+            print(models.id)
 
     def do_show(self, arg):
-        """"""
+        """Prints the string representation of the instance class and id"""
+        arg.split()
         if len(arg) == 0:
             print("** class name missing **")
         elif arg[0] not in self.class_name:
             print("** class doesn't exist **")
 
-
     def do_destroy(self, arg):
-        """"""
+        """Deletes an instance based on class name and id"""
         if len(arg) == 0:
             print("** class name missing **")
         elif arg[0] not in self.class_name:
@@ -49,10 +49,12 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_all(self, arg):
-        """"""
+        """Prints all string representation of all instances"""
+        if arg[0] not in self.class_name:
+            print("** class doesn't exist **")
 
     def do_update(self, arg):
-        """"""
+        """Updates an instance based on the class name and id"""
         if len(arg) == 0:
             print("** class name missing **")
         elif arg[0] not in self.class_name:
