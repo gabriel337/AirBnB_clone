@@ -16,5 +16,9 @@ class HBNBCommand(cmd.Cmd):
         """ EOF is added """
         return True
 
+    def emptyline(self):
+        """empty line if no command is given"""
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
