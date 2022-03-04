@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"do_all && do_show && do_destroy is missing the condition for the instance of the class"
 
 import cmd
 from models.base_model import BaseModel
-from models import class_name, storage
+from models import class_name
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """Simple command processor example."""
@@ -35,6 +35,10 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """Prints the string representation of the instance class and id"""
         argv = arg.split()
+        try:
+            key = argv[0] + "." + argv[1]
+        except Exception:
+            pass
 
         if len(arg) == 0:
             print("** class name missing **")
@@ -42,13 +46,23 @@ class HBNBCommand(cmd.Cmd):
             if argv[0] in class_name:
                 if len(argv) < 2:
                     print("** instance id missing **")
+                elif key in storage.all().keys():
+                    print(storage.all()[key])
+                else:
+                    print("** no instance found **")
             else:
                 print("** class doesn't exist **")
+
+
 
 
     def do_destroy(self, arg):
         """Deletes an instance based on class name and id"""
         argv = arg.split()
+        try:
+            key = argv[0] + "." + argv[1]
+        except Exception:
+            pass
 
         if len(arg) == 0:
             print("** class name missing **")
@@ -56,18 +70,29 @@ class HBNBCommand(cmd.Cmd):
             if argv[0] in class_name:
                 if len(argv) < 2:
                     print("** instance id missing **")
+                elif key in storage.all().keys():
+                    del storage.all()[key]
+                    storage.save()
+                else:
+                    print("** no instance found **")
             elif argv[0] not in class_name:
                 print("** class doesn't exist **")
 
 
+
     def do_all(self, arg):
         """Prints all string representation of all instances"""
+
         if arg[0] not in class_name:
             print("** class doesn't exist **")
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
         argv = arg.split()
+        try:
+            key = argv[0] + "." + argv[1]
+        except Exception:
+            pass
 
         if len(arg) == 0:
             print("** class name missing **")
@@ -75,6 +100,11 @@ class HBNBCommand(cmd.Cmd):
             if argv[0] in class_name:
                 if len(argv) < 2:
                     print("** instance id missing **")
+                elif key in storage.all().keys():
+                    print(storage.all()[key])
+                else:
+                    print("** no instance found **")
+
             else:
                 print("** class doesn't exist **")
 
