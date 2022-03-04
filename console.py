@@ -115,13 +115,20 @@ class HBNBCommand(cmd.Cmd):
             if argv[0] in class_name:
                 if len(argv) < 2:
                     print("** instance id missing **")
-                elif key in storage.all().keys():
-                    print(storage.all()[key])
-                else:
+                elif len(argv) < 3:
+                    print("** attribute name missing **")
+                elif len(argv) < 4:
+                    print("** value missing **")
+                elif key not in storage.all().keys():
                     print("** no instance found **")
-
+                else:
+                    for key, value in storage.all().items():
+                        if argv[1] == value.id:
+                            setattr(value, argv[2], argv[3].strip('"'))
+                            storage.save()
             else:
                 print("** class doesn't exist **")
+
 
 
 if __name__ == '__main__':
