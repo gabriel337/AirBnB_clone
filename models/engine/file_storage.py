@@ -3,6 +3,12 @@
 
 from models.base_model import BaseModel
 import json
+from models.user import User
+from models.city import City
+from models.place import Place
+from models.state import State
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage():
@@ -10,7 +16,6 @@ class FileStorage():
 
     __file_path = 'file.json'
     __objects = {}
-
 
     def all(self):
         """Returns the dictionary __objects"""

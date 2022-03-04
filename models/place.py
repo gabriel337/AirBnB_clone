@@ -4,6 +4,7 @@
 import json
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """
     Contains class attr:
