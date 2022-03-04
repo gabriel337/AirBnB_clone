@@ -3,13 +3,14 @@
 
 from models.base_model import BaseModel
 import json
-
+import from models.user import User
 
 class FileStorage():
     """Class that serializes instances and deserializes JSON file"""
 
     __file_path = 'file.json'
     __objects = {}
+    classes = {"BaseModel": BaseModel, "User": User}
 
 
     def all(self):
@@ -35,7 +36,7 @@ class FileStorage():
             with open(FileStorage.__file_path, 'r') as file:
                 json_dict = json.load(file)
             for key, value in json_dict.items():
-                value = eval(value["__class__"])(value)
+                value = FileStorage.classes[eval(value["__class__"]])(value)
                 FileStorage.__objects[key] = value
         except FileNotFoundError:
             pass
