@@ -4,6 +4,13 @@ import cmd
 from models.base_model import BaseModel
 from models import class_name
 from models import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 class HBNBCommand(cmd.Cmd):
     """Simple command processor example."""
@@ -79,12 +86,20 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
 
 
-
     def do_all(self, arg):
         """Prints all string representation of all instances"""
+        argv = arg.split()
 
-        if arg[0] not in class_name:
+        if len(argv) > 0 and argv[0] not in class_name:
             print("** class doesn't exist **")
+        else:
+            objs = []
+            for obj in storage.all().values():
+                if len(argv) > 0 and argv[0] == obj.__class__.__name__:
+                    objs.append(obj.__str__())
+                elif len(argv) == 0:
+                    objs.append(obj.__str__())
+            print(objs)
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
