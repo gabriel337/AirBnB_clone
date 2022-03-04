@@ -60,9 +60,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** class doesn't exist **")
 
-
-
-
     def do_destroy(self, arg):
         """Deletes an instance based on class name and id"""
         argv = arg.split()
@@ -85,11 +82,9 @@ class HBNBCommand(cmd.Cmd):
             elif argv[0] not in class_name:
                 print("** class doesn't exist **")
 
-
     def do_all(self, arg):
         """Prints all string representation of all instances"""
         argv = arg.split()
-
         if len(argv) > 0 and argv[0] not in class_name:
             print("** class doesn't exist **")
         else:
@@ -128,7 +123,6 @@ class HBNBCommand(cmd.Cmd):
                             storage.save()
             else:
                 print("** class doesn't exist **")
-
 
 
 if __name__ == '__main__':
