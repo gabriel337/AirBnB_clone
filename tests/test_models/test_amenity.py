@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+Unittest for Amenity class
+"""
 import unittest
 from models.amenity import Amenity
 from models.base_model import BaseModel
@@ -13,7 +15,8 @@ class TestAmenity(unittest.TestCase):
         cls.amenity_test.name = "test_class"
 
     def test_is_subclass(self):
-        self.assertTrue(issubclass(self.amenity_test.__class__, BaseModel), True)
+        self.assertTrue(issubclass(self.amenity_test.__class__,
+                        BaseModel), True)
 
     def test_checking_for_functions(self):
         self.assertIsNotNone(Amenity.__doc__)
@@ -29,7 +32,8 @@ class TestAmenity(unittest.TestCase):
 
     def test_save(self):
         self.amenity_test.save()
-        self.assertNotEqual(self.amenity_test.created_at, self.amenity_test.updated_at)
+        self.assertNotEqual(self.amenity_test.created_at,
+                            self.amenity_test.updated_at)
 
     def test_to_dict(self):
         self.assertEqual('to_dict' in dir(self.amenity_test), True)
