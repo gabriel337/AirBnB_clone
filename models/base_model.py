@@ -3,6 +3,7 @@
 import uuid
 from datetime import datetime
 import models
+from xmlrpc.client import _iso8601_format
 
 
 class BaseModel:
@@ -17,6 +18,7 @@ class BaseModel:
                     value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
                 if key != '__class__':
                     setattr(self, key, value)
+            models.storage.new(self)
         else:
 
             self.id = str(uuid.uuid4())
