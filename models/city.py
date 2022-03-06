@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """module city"""
 
-import json
 from models.base_model import BaseModel
 
 

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """module Amenity"""
 
-import json
 from models.base_model import BaseModel
 
 

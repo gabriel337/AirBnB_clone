@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module place"""
 
-import json
 from models.base_model import BaseModel
 
 
