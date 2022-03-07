@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Entry of commands
+"""
 
 import cmd
 from models.base_model import BaseModel
@@ -22,6 +25,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """ EOF is added """
+        print()
         return True
 
     def emptyline(self):

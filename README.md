@@ -20,8 +20,8 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb) 
-(hbnb) 
+(hbnb)
+(hbnb)
 (hbnb) quit
 $
 ```
@@ -35,7 +35,7 @@ $ echo "help" | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 $ cat test_help
 help
@@ -46,7 +46,7 @@ $ cat test_help | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 ```
 
@@ -76,14 +76,14 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb) 
+(hbnb)
 (hbnb) help quit
 Quit command to exit the program
 
-(hbnb) 
-(hbnb) 
-(hbnb) quit 
-guillaume@ubuntu:~/AirBnB$ 
+(hbnb)
+(hbnb)
+(hbnb) quit
+guillaume@ubuntu:~/AirBnB$
 ```
 
 |Commands|Format|Instance form|Description
@@ -124,7 +124,7 @@ EOF  help  quit
 
 ```
 (hbnb) quit 
-vagrant@ubuntu:~/AirBnB$ 
+vagrant@ubuntu:~/AirBnB$
 ```
 
 * create:
@@ -196,7 +196,7 @@ hbnb) User.all()
 ```
 (hbnb) User.show("35dd5991-c54f-4e33-a4c4-2be5219cc15e")
 [User] (35dd5991-c54f-4e33-a4c4-2be5219cc15e) {'id': '35dd5991-c54f-4e33-a4c4-2be5219cc15e', 'created_at': datetime.datetime(2021, 7, 1, 4, 46, 0, 151113), 'updated_at': datetime.datetime(2021, 7, 1, 4, 46, 0, 151209)}
-(hbnb) 
+(hbnb)
 ```
 
 * ```<class name>.destroy(<id>)```:
@@ -207,7 +207,7 @@ hbnb) User.all()
 (hbnb) User.destroy("35dd5991-c54f-4e33-a4c4-2be5219cc15e")
 (hbnb) User.count()
 1
-(hbnb) 
+(hbnb)
 ```
 
 * update
