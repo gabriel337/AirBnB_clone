@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""contains subclass user
+"""
+contains subclass user
 """
 from models.base_model import BaseModel
 
