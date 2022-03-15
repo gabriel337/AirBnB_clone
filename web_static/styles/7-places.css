@@ -12,6 +12,8 @@ article {
   padding: 20px;
   margin: 20px;
   display: inline-block;
+  position: relative;
+  bottom: 25px;
 }
 article h2 {
   font-size: 30px;
