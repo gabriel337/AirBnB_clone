@@ -15,5 +15,7 @@ article {
 }
 article h2 {
   font-size: 30px;
+  position: relative;
+  bottom: 35px;
   text-align: center;
 }
